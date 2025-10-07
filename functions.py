@@ -3,8 +3,6 @@ import pandas as pd
 
 
 
-
-
 # ==================================== Set Parameters ====================================
 roundVal = 3
 
@@ -54,13 +52,15 @@ def describeSet(data, tag=''):
 
     return stats
 
+
+
 def compairSets(data1, tag1, data2, tag2):
     print('=============================== Compare Datasets '
           '================================')
-    print(f'Compair sets: {purple}{tag2}{resetColor} - {purple}{tag1}{resetColor}')
+    print(f'Compair sets: {blue}{tag2}{resetColor} - {yellow}{tag1}{resetColor}')
     for key in data1.keys():
-        print(f'  Δ{key} = {round(data2[key], roundVal)} - '
-              f'{round(data1[key], roundVal)} = '
+        print(f'  Δ{key} = {blue}{round(data2[key], roundVal)}{resetColor} - '
+              f'{yellow}{round(data1[key], roundVal)}{resetColor} = '
               f'{red}{round(round(data2[key] - data1[key], roundVal), roundVal)}'
               f'{resetColor}')
     print('\n')
